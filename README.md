@@ -8,7 +8,7 @@ This project helped strengthen my knowledge of Jquery through traversing the DOM
 
 ## Screenshot
 
-![Image of initial page load](assets/screenshot.png)
+![Image of initial page load](Assets/screenshot.png)
 
 ## Resources
 
