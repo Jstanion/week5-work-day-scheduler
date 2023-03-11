@@ -22,3 +22,7 @@ The dayjs function was pulled from the lesson we went over in class for units 25
 ## License
 
 Please refer to the license listed in the repository.
+
+## Link to Deployed Live Site
+
+<https://jstanion.github.io/week5-work-day-scheduler/>
