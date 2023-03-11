@@ -16,13 +16,16 @@ $(document).ready(function () {
     localStorage.setItem(timeBlockId, userInput);
     });
   
-  // Apply the past, present, or future class to each time block
-  //grabs the current hour from dayjs
-  var currentHour = dayjs().hour();
-
-  //compares each time-block to the current hour
+    //grabs the current hour from dayjs
+    var currentHour = dayjs().hour();
+    
+    // Function that applies the past, present, or future class to each time block
   $('.time-block').each(function() {
+    
+    // Takes the id and creates an array, the [1] grabs the number string from the array and parseInt changes the value from a string to a number
     var timeBlockHour = parseInt($(this).attr('id').split('-')[1]);
+
+    // Conditional statement to compare the hour of the time-block with the current hour
     if (timeBlockHour < currentHour) {
       $(this).addClass('past');
       } else if (timeBlockHour === currentHour) {
@@ -32,23 +35,23 @@ $(document).ready(function () {
       }
   });
 
+  // Get any user input that was saved in localStorage and set the values of the corresponding textarea elements
+  $('.time-block').each(function() {
 
-  // TODO: Add code to get any user input that was saved in localStorage and set
-  // the values of the corresponding textarea elements. HINT: How can the id
-  // attribute of each time-block be used to do this?
-  //
-  // TODO: Add code to display the current date in the header of the page.
+    // Get the id of the time-block storing the data in local storage
+    var timeBlockId = $(this).attr('id');
+
+    // Get the user input from local storage based on the time-block id
+    var userInput = localStorage.getItem(timeBlockId);
+
+    // Display the user input value in the text are for the corresponding time-block
+    $(this).children('.description').val(userInput);
+    });
+
+  // Display the current date in the header of the page.
   var today = dayjs();
   $('#currentDay').text(today.format('dddd MMM DD, YYYY'));
-  console.log(today);
 });
 
-//Notes - 
-  //use dayjs to reference each block to the current time and possibly set that value globally - not sure yet how to differentiate the span of time for each hour
-
-  //add event listener for save button to store data in local storage
-
-  //create a function that contians the following so it can be called for each time block
-    //use a conditional statement for each time block to change the color of the container
 
 
