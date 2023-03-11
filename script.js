@@ -35,7 +35,7 @@ $(document).ready(function () {
       }
   });
 
-  // Get any user input that was saved in localStorage and set the values of the corresponding textarea elements
+  // Get any user input that was saved in localStorage and display the value to its corresponding textarea elements
   $('.time-block').each(function() {
 
     // Get the id of the time-block storing the data in local storage
